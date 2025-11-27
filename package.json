@@ -1,0 +1,20 @@
+{
+  "name": "playwrighttypescriptdemoproject",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js --exit"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "cucumber-html-reporter": "^6.0.0",
+    "ts-node": "^10.9.2"
+  }
+}
