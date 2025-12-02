@@ -25,4 +25,3 @@ export default class HomePage{
         await expect(this.page.locator('.success td').nth(1).filter({hasText:""+addedproduct+""})).toBeVisible();
     }
 }
-module.exports = {HomePage};

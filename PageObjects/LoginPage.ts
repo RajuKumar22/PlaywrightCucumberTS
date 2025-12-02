@@ -2,7 +2,7 @@ import { type Locator, type Page } from "@playwright/test";
 
 export default class LoginPage{
 
-    readonly page: Page;
+    readonly page: Page; 
     readonly username: Locator;
     readonly password: Locator;
     readonly LogInbtn: Locator;
@@ -26,6 +26,9 @@ export default class LoginPage{
         await this.username.waitFor();
         await this.username.fill(username);
         await this.password.fill(password);
+    }
+
+    async ClickOnLoginBtn(){
         await this.LogInbtn.click();
     }
 }

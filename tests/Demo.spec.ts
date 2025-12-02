@@ -1,22 +1,25 @@
 import { test, expect } from '@playwright/test';
-import LoginPage from '../src/test/PageObjects/LoginPage';
-import HomePage from '../src/test/PageObjects/HomePage';
+import LoginPage from '../PageObjects/LoginPage';
+import HomePage from '../PageObjects/HomePage';
 const dataset = JSON.parse(JSON.stringify(require("../TestData/TestData.json")));
 const bulkdataset = JSON.parse(JSON.stringify(require("../TestData/BulkDataSet.json")));
 
 // test.describe.configure({ mode: 'parallel' });
-test('Login to Demo Site with valid credentials', async ({ page }) => {
+test('@Login to Demo Site with valid credentials', async ({ page }) => {
     const login = new LoginPage(page);
     await login.Goto();
     await login.ValidLogin(dataset.username,dataset.password);
     await expect(page.getByText('Welcome Raju Kumar')).toBeVisible();
 }) 
 
-test('Login to Demo Site with Invalid credentials', async ({ page }) => {
+test('Login to Demo Site with Invalid credentials', {tag:'@Login'},async ({ page }) => {
 
     const login = new LoginPage(page);
     await login.Goto();
     await login.ValidLogin(dataset.invalidusername,dataset.invalidpassword);
+    // await page.pause();
+    page.on('dialog', dialog => dialog.message());
+    page.on('dialog', dialog => dialog.accept());
     await expect(page.getByText('Welcome Raju Kumar')).toHaveCount(0);
 })
 
@@ -34,7 +37,7 @@ test('Add product to Cart', async ({ page }) => {
 
 for (const bulkdata of bulkdataset)
 {    
-test.only(`Login with username = ${bulkdata.username}`, async ({ page }) => {
+test(`Login with username = ${bulkdata.username}`, async ({ page }) => {
 
     const login = new LoginPage(page);
     await login.Goto();
