@@ -8,7 +8,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js --exit"
+    "CucumberScript": "npx cucumber-js --exit",
+    "PlaywrightScript": "npx playwright test"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",

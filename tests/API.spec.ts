@@ -8,10 +8,9 @@ test.beforeAll(async () => {
     const apiContext = await request.newContext();
     const apiUtils = new APiUtils(apiContext, loginPayLoad);
     response = await apiUtils.createOrder(orderPayLoad);
- 
 })
 
-test('@API Place the order', async ({ page }) => {
+test.only('@API Place the order', async ({ page }) => {
     await page.addInitScript(value => {
 
         window.localStorage.setItem('token', value);
