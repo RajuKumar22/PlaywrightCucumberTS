@@ -9,7 +9,7 @@ test('Checkout Flow - Negative and Positive', async ({ page }) => {
   await page.getByRole('link', { name: 'Samsung galaxy s6' }).click();
   await page.getByRole('listitem').filter({ hasText: /^$/ }).first().click();
   await page.getByRole('link', { name: 'Add to cart' }).click();
-
+     
   // 2. Go to cart page
   await page.getByRole('link', { name: 'Cart', exact: true }).click();
 

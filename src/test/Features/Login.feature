@@ -29,7 +29,7 @@ Feature: Login to the site
     @Regression
     Scenario: Verify user is able to add product to cart
         Given User enters username and password "Raju Kumar" and "Rajput@65328"
-        When User clicks on login btn
+        When User clicks on login btn   
         When User adds product to the cart
         Then Verify product is added to the cart successfully
 

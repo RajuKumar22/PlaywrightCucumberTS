@@ -9,7 +9,7 @@ let loginpage: LoginPage
 let context: any
 let homepage: HomePage
 let productname = 'Samsung galaxy s6';
-
+    
 Before(async function () {
     browser = await chromium.launch({ headless: false });
     context = await browser.newContext();
@@ -22,7 +22,7 @@ Before(async function () {
 
 When('Launch the website URL', { timeout: 10 * 1000 }, async function () {
     await loginpage.Goto()
-    console.log("Launch the website")
+    console.log("Launch the website")      
 });
 
 Given('User enters username and password {string} and {string}', { timeout: 10 * 1000 }, async function (username: string, password: string) {
